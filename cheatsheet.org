@@ -294,8 +294,11 @@ chisel64.exe client 192.168.45.217:8000 R:socks
 
    This, by default, will create a SOCKS5 proxy within the endpoint
    127.0.0.1:1080 of our local machine. To access that proxy we can
-   edit the proxychains conf in order to put at the end "socks5
-   127.0.0.1:1080".
+   edit the proxychains conf in order to put at the end
+
+   #+begin_example
+socks5 127.0.0.1:1080
+   #+end_example
 
 * Enumeration
   
