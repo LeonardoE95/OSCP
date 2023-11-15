@@ -3,9 +3,13 @@
 This repository contains cheatsheet and other information related to the OSCP certification. 
 
 If you're interested in a meaningful outline of the material covered
-by OSCP, go and read my article about it ([OSCP Technical Guide](https://blog.leonardotamiano.xyz/tech/oscp-technical-guide/)). 
+by OSCP, go and read my article about it ([OSCP Technical
+Guide](https://blog.leonardotamiano.xyz/tech/oscp-technical-guide/)).
 
-If you're interested in video content, currently I'm working towards a playlist covering technical material useful for OSCP. You can find it in my english youtube channel: [Youtube – Hexdump](https://www.youtube.com/@hexdump1337).
+If you're interested in video content, currently I'm working towards a
+playlist covering technical material useful for OSCP. You can find it
+in my english youtube channel: [Youtube –
+Hexdump](https://www.youtube.com/watch?v=9mrf-WyzkpE&list=PLJnLaWkc9xRgOyupMhNiVFfgvxseWDH5x)
 
 ## Report Generation
 
