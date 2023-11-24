@@ -39,7 +39,7 @@ file I suggest to download it from github.
 wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.tex
 ```
 
-Then, edit the file `./report/generate.sh` script in order to insert your own `OSID`
+Then, edit the script `./report/generate.sh` in order to insert your own `OSID`
 value. So for example assuming my `OSID` was `99999999` then I would
 write on top of the file
 
@@ -47,8 +47,8 @@ write on top of the file
 OSID=99999999 
 ```
 
-Finally, just execute the `./generate.sh` script, and you should see
-the following
+Finally, just execute `./generate.sh`, and you should see the
+following
 
 ```
 [leo@archlinux report]$ ./generate.sh 

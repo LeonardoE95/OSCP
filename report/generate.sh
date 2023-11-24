@@ -27,8 +27,6 @@ ARCHIVE_NAME="${ROOT}/OSCP-OS-${OSID}-Exam-Report.7z"
 RED='\033[0;31m'
 NC='\033[0m'
 
-# colors for generatng final PDF
-
 # ----------------------------
 
 check_requirements() {
