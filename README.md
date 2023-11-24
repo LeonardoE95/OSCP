@@ -7,6 +7,10 @@ the OSCP certification in the following nine modules. For each module,
 you will find a specific folder containing information regarding that
 module. The modules are listed below.
 
+**NOTE**: Currently there's not much in these modules, because I just
+started to work on this. In the following months you should see more
+content coming.
+
 - [01 – Web](./modules/01-web)
 - [02 – Linux](./modules/02-linux)
 - [03 – Windows](./modules/02-windows)
