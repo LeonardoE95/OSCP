@@ -31,9 +31,14 @@ Other material that I developed regarding OSCP
 
 # Report
 In the `./report` folder you will find a folder ready to be used for
-the final exam. To generate the report, make sure you have `pandoc`
-installed with the latex theme `eisvogel`. If you do not have such
-file I suggest to download it from github.
+the final exam. The idea is simple: you write your exam finding in
+`report.md` using markdown syntax. If you need some images you can put
+them in the `img` folder. Then, when you're done, you can generate the
+report using the `generate.sh` script.
+
+To actually generate the report, make sure you have `pandoc` installed
+with the latex theme `eisvogel`. If you do not have such file I
+suggest to download it from github.
 
 ```
 wget https://raw.githubusercontent.com/Wandmalfarbe/pandoc-latex-template/master/eisvogel.tex
