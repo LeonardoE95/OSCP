@@ -17,14 +17,11 @@ module. The modules are listed below.
 - [08 – Active Directory](./modules/08-active-directory)
 - [09 – Report Writing](./modules/09-report-writing)
 
-Other material that I developed regarding OSCP:
+Other material that I developed regarding OSCP
 
-- [Blog post – OSCP Technical Guide](https://blog.leonardotamiano.xyz/tech/oscp-technical-guide/),
-  A long blog post in which I provide meaningful outline of all the
-  material covered by the `PEN-200` course.
+- [Blog post – OSCP Technical Guide](https://blog.leonardotamiano.xyz/tech/oscp-technical-guide/)
   
 - [Youtube Playlist – Hexdump](https://www.youtube.com/watch?v=9mrf-WyzkpE&list=PLJnLaWkc9xRgOyupMhNiVFfgvxseWDH5x)
-  Youtube playlist with blog post reading plus extra observation and examples.
 
 - [Cheatsheet](./cheatsheet.org)
 
