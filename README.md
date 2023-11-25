@@ -30,11 +30,12 @@ Other material that I developed regarding OSCP
 - [Cheatsheet](./cheatsheet.org)
 
 # Report
-In the `./report` folder you will find a folder ready to be used for
-the final exam. The idea is simple: you write your exam finding in
-`report.md` using markdown syntax. If you need some images you can put
-them in the `img` folder. Then, when you're done, you can generate the
-report using the `generate.sh` script.
+In the `./report` you will find a folder ready to be used for the
+final exam. The idea is simple: you write your exam findings in a
+report using either the `markdown` or `org` markup languages, and then
+you can use the `generate.sh` script to generate a final PDF. Two
+sample reports `report.md` and `report.org` are presented. You can
+take inspiration from those and customize it to your own need.
 
 To actually generate the report, make sure you have `pandoc` installed
 with the latex theme `eisvogel`. If you do not have such file I
@@ -68,4 +69,14 @@ After the script has succesfully executed, you will see two new files:
 - `OSCP-OS-99999999-Exam-Report.pdf`, which contains the generated pdf for previewing
 - `OSCP-OS-99999999-Exam-Report.7z`, which contains the final artifat you can use to submit your record. 
 
-Finally, notice how at the end the MD5 of the artifact is computed. This can be used during OffSec upload procedure to make sure you uploaded the correct file.
+Notice how at the end the MD5 of the artifact is computed. This can be
+used during OffSec upload procedure to make sure you uploaded the
+correct file. Finally, if you want to change the input filename to
+export, just give an argument to the `generate.sh` script as
+follows. Just remember that the scripts only supports `markdown` and
+`org` syntaxes.
+
+```
+./generate.sh report.md
+./generate.sh report.org
+```
