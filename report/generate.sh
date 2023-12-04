@@ -13,7 +13,7 @@
 ROOT=$(dirname $(realpath $0))
 
 # CHANGE, with your OSID value
-OSID=99999999
+OSID=1
 
 # This can also be supplied from the command line
 #
@@ -146,7 +146,7 @@ main() {
     [ $? -eq 1 ] && echo "[ERROR]: Problems during 7z archive creation!" && exit;
 
     # # output MD5 hash
-    MD5=$(md5sum OSCP-OS-99999999-Exam-Report.7z | awk -F '  ' '{print $1}')
+    MD5=$(md5sum $ARCHIVE_NAME | awk -F '  ' '{print $1}')
     [ $? -eq 1 ] && echo "[ERROR]: Problems during computation of MD5" && exit;
     
     printf "[INFO]: MD5 of archive (${RED}${MD5}${NC})\n"

@@ -2,10 +2,9 @@
 #+SUBTITLE: OSCP Exam Report
 #+AUTHOR: YOUR-EMAIL, OSID: OS-99999999
 #+DATE: 2023-08-12
-#+LaTeX_HEADER: \usepackage{etex}
 
 * Offensive Security OSCP Exam Report
-
+  
 ** Introduction
    The Offensive Security Exam penetration test report contains all
    efforts that were conducted in order to pass the Offensive Security
@@ -90,7 +89,7 @@
   includes all individual vulnerabilities found.
 
   
-** Information Gatherting
+** Information Gathering
    The information gathering portion of a penetration test focuses on
    identifying the scope of the penetration test.  During this
    penetration test, John was tasked with exploiting the lab and exam
