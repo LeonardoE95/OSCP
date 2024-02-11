@@ -29,7 +29,13 @@ Other material that I developed regarding OSCP
 
 - [Cheatsheet](./cheatsheet.org)
 
-# Report
+# 02 – Linux
+
+For the linux module the following attack techniques have been described so far.
+
+- [X] [PATH Hijacking](./modules/02-linux/PATH-hijacking)
+
+# 09 – Report Writing
 In the `./report` you will find a folder ready to be used for the
 final exam. The idea is simple: you write your exam findings in a
 report using either the `markdown` or `org` markup languages, and then

