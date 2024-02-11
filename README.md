@@ -2,10 +2,10 @@
 
 This repository contains useful information related to the OSCP certification. 
 
-I have organized all the knowledge you need to know in order to obtain
-the OSCP certification in the following nine modules. For each module,
-you will find a specific folder containing information regarding that
-module. The modules are listed below.
+Specifically, I have organized all the knowledge you need to know in
+order to obtain the OSCP certification into nine different
+modules. For each module, you will find a specific folder containing
+information regarding that module. The modules are listed below.
 
 **NOTE**: Currently there's not much in these modules, because I just
 started to work on this. In the following months you should see more
@@ -29,13 +29,95 @@ Other material that I developed regarding OSCP
 
 - [Cheatsheet](./cheatsheet.org)
 
+# 01 – Web
+
+For the `web` module the following topics have been covered.
+
+- [ ] Introduction to Web Exploitation
+- [ ] Getting used to burpsuite
+- [ ] SQL Injection
+- [ ] Directory Traversal
+- [ ] File Inclusion
+- [ ] File Upload
+- [ ] Command Injection
+- [ ] Cross-Site Scripting
+
 # 02 – Linux
 
-For the linux module the following attack techniques have been described so far.
+For the `linux` module the following topics have been covered.
 
+- [ ] System shell
 - [X] [PATH Hijacking](./modules/02-linux/PATH-hijacking)
+- [ ] SUID exploitation
+- [ ] System enumeration
+- [ ] Cronjob enumeration
+- [ ] SUDO exploitation
+- [ ] Wildcard expansion
+
+# 03 – Windows
+
+For the `windows` module the following topics have been covered.
+
+- [ ] System shell
+- [ ] System enumeration
+- [ ] Useful system commands
+- [ ] SeImpersonatePrivilege Exploitation
+- [ ] Service Hijacking Exploitation
+- [ ] Unquoted Service Paths Exploitation
+
+# 04 – Password Attacks
+
+For the `password attacks` module the following topics have been covered.
+
+- [ ] Hash cracking theory
+- [ ] Hash cracking tools
+- [ ] KeePass databases
+- [ ] Ssh keys
+- [ ] NTLM hash
+- [ ] Net-NTLMv2 hash
+- [ ] AS-REP hash
+- [ ] Kerberoasting hash
+
+# 05 – Using Existing Exploits
+
+For the `using existing exploits` module the following topics have been covered.
+
+- [ ] Metasploit
+- [ ] exploit-db
+- [ ] CVE-2021-41773
+
+# 06 – Port Forwarding and Pivoting
+
+For the `port forwarding and pivoting` module the following topics have been covered.
+
+- [ ] Local Port Forwarding
+- [ ] Dynamic Port Forwarding
+- [ ] Remote Port Forwarding
+- [ ] Remote Dynamic Port Forwarding
+
+# 07 – Client-side Attacks
+
+For the `client-side attacks` module the following topics have been covered.
+
+- [ ] Cross-Site Scripting
+- [ ] Microsoft Word Macros
+- [ ] Windows Library Files
+
+# 08 – Active Directory
+
+For the `active directory` module the following topics have been covered.
+
+- [ ] Enumeration
+- [ ] Main tools
+- [ ] Kerberoasting
+- [ ] AS-REP roasting
+- [ ] DCsync attack
+- [ ] Mimikatz
+- [ ] NTLM authentication
+- [ ] Kerberos authentication
 
 # 09 – Report Writing
+
 In the `./report` you will find a folder ready to be used for the
 final exam. The idea is simple: you write your exam findings in a
 report using either the `markdown` or `org` markup languages, and then
