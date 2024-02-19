@@ -1,5 +1,7 @@
 # PATH Hijacking
 
+[Linux Privilege Escalation – PATH Hijacking](https://www.youtube.com/watch?v=IPs5xz5aEzk)
+
 ## What is the PATH?
 
 When you launch a program, for example in the shell, you typically
