@@ -1,5 +1,11 @@
 # OSCP – 01 Web
 
+## Introduction
+
+- [X] Introduction to Web Exploitation
+
+- [ ] Getting used to burpsuite
+
 ## Web Vulnerabilities
 Core vulnerabilities
 

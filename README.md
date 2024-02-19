@@ -33,8 +33,8 @@ Other material that I developed regarding OSCP
 
 For the `web` module the following topics have been covered.
 
-- [ ] Introduction to Web Exploitation
-- [ ] Getting used to burpsuite
+- [X] [Introduction to Web Exploitation](./modules/01-web/01-introduction-to-web-exploitation)
+- [X] [Getting used to burpsuite](01-web/02-getting-used-to-burpsuite)
 - [ ] SQL Injection
 - [ ] Directory Traversal
 - [ ] File Inclusion

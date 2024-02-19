@@ -1,6 +1,6 @@
 # PATH Hijacking
 
-[Linux Privilege Escalation – PATH Hijacking](https://www.youtube.com/watch?v=IPs5xz5aEzk)
+Youtube Video: [Linux Privilege Escalation – PATH Hijacking](https://www.youtube.com/watch?v=IPs5xz5aEzk)
 
 ## What is the PATH?
 
