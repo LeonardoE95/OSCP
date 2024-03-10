@@ -34,9 +34,9 @@ Other material that I developed regarding OSCP
 For the `web` module the following topics have been covered.
 
 - [X] [Introduction to Web Exploitation](./modules/01-web/01-introduction-to-web-exploitation)
-- [X] [Getting used to burpsuite](01-web/02-getting-used-to-burpsuite)
-- [ ] SQL Injection
-- [ ] Directory Traversal
+- [X] [Getting used to burpsuite](./modules/01-web/02-getting-used-to-burpsuite)
+- [X] [SQL Injection](./modules/01-web/03-sql-injection)
+- [X] [Directory Traversal](./modules/01-web/04-directory-traversal)
 - [ ] File Inclusion
 - [ ] File Upload
 - [ ] Command Injection
