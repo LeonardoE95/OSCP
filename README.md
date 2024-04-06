@@ -29,6 +29,10 @@ Other material that I developed regarding OSCP
 
 - [Cheatsheet](./cheatsheet.org)
 
+If you want to support my work, feel free to donate:
+
+- [❤️ Paypal Donation](https://www.paypal.com/donate/?hosted_button_id=T49GUPRXALYTQ)
+
 # 01 – Web
 
 For the `web` module the following topics have been covered.
@@ -37,8 +41,8 @@ For the `web` module the following topics have been covered.
 - [X] [Getting used to burpsuite](./modules/01-web/02-getting-used-to-burpsuite)
 - [X] [SQL Injection](./modules/01-web/03-sql-injection)
 - [X] [Directory Traversal](./modules/01-web/04-directory-traversal)
-- [ ] File Inclusion
-- [ ] File Upload
+- [X] [File Inclusion](./modules/01-web/05-file-inclusion)
+- [X] [File Upload Vulnerabilities](./modules/01-web/06-file-upload-vulnerabilities)
 - [ ] Command Injection
 - [ ] Cross-Site Scripting
 

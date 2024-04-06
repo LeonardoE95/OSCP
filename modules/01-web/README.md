@@ -4,32 +4,20 @@
 
 - [X] Introduction to Web Exploitation
 
-- [ ] Getting used to burpsuite
+- [X] Getting used to burpsuite
 
 ## Web Vulnerabilities
-Core vulnerabilities
 
-- [ ] SQL Injection (SQLi)
+There are many vulnerabilities in the context of the Web. The following list contains some of the core vulnerabilities that you need to know in the context of the OSCP exam.
 
-- [ ] Directory traversal
+- [X] SQL Injection (SQLi)
 
-- [ ] Local File Inclusion (LFI)
+- [X] Directory traversal
 
-- [ ] Remote File Inclusion (RFI)
+- [X] File Inclusion (Local + Remote)
 
-- [ ] File upload 
+- [X] File Upload Vulnerabilities
 
 - [ ] OS Command Injection
 
 - [ ] Cross-Site Scripting (XSS)
-
-## Network Protocols
-
-TODO...
-
-## Tools
-
-Useful tools
-
-- gobuster
-- burpsuite
