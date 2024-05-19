@@ -46,8 +46,8 @@ For the `web` module the following topics have been covered.
 - [X] [Command Injection](https://www.youtube.com/watch?v=F9_wc7J4iMU)
 - [X] [Cross-Site Scripting](https://www.youtube.com/watch?v=XdlCWekzMq4)
 - [X] [Web Enumeration – Files and Directories](https://www.youtube.com/watch?v=kfkGhuT6Lnc)
-- [X] [Web Enumeration – Virtual Hosts]
-- [X] [Web Enumeration – Fuzzing for HTTP Parameters Enumeration](https://www.youtube.com/watch?v=OlOs31VzhHo)
+- [X] [Web Enumeration – Virtual Hosts](https://www.youtube.com/watch?v=qksFm0HaBN0)
+- [X] [Web Enumeration – HTTP Parameters](https://www.youtube.com/watch?v=OlOs31VzhHo)
 - [X] [Brute Force Attacks](https://youtu.be/tFNRGMF_bdE)
 - [X] [DNS Zone Transfer Attacks](https://youtu.be/IRvHfLhcGVw)
 
