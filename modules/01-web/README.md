@@ -38,7 +38,7 @@ Finally, the following are useful technique to know when dealing with web techno
 
 - [X] [Brute Force Attacks](https://youtu.be/tFNRGMF_bdE)
 
-- [X] [DNS Zone Transfer Attacks](https://youtu.be/IRvHfLhcGVw
+- [X] [DNS Zone Transfer Attacks](https://youtu.be/IRvHfLhcGVw)
 
 ## Full Course
 
