@@ -1,0 +1,43 @@
+#+TITLE: Web Exploiation
+#+SUBTITLE: 02 - BurpSuite
+#+AUTHOR: Leonardo Tamiano
+
+* Setup
+  Install Java
+  #+begin_src sh
+archlinux-java status
+sudo pacman -S jdk-openjdk
+  #+end_src
+   
+  Download burpsuite
+  #+begin_src sh
+wget "https://portswigger.net/burp/releases/startdownload?product=community&version=2023.12.1.5&type=Jar" -O burpsuite.jar
+  #+end_src
+
+  Start burpsuite
+  #+begin_src sh
+_JAVA_AWT_WM_NONREPARENTING=1 java -jar burpsuite.jar >/dev/null 2>&1 &
+  #+end_src
+
+  Start chromium
+  #+begin_src sh
+chromium \
+    --user-data-dir=pt-activity \
+    --proxy-server=127.0.0.1:8080 \
+    --ignore-certificate-errors \
+    --proxy-bypass-list="<-loopback>" \
+    >/dev/null 2>&1 &
+  #+end_src
+
+  Add certificate to chromium
+  #+begin_src sh
+chrome://settings/certificates
+  #+end_src
+   
+  Start web application
+  #+begin_src sh
+docker run -d -p 80:80 -p 5000:5000 -p 1080:1080 -e 'SeedingSettings:Admin=admin@ssrd.io' -e 'SeedingSettings:AdminPassword=admin' ssrd/securebank
+  #+end_src
+   
+* Refs
+  https://github.com/Ignitetechnologies/BurpSuite-For-Pentester

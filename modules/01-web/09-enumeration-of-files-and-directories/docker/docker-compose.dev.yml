@@ -1,0 +1,10 @@
+version: '3'
+services:
+
+  nginx-lab:
+    image: nginx-lab
+    container_name: nginx-lab-dev
+    volumes:
+      - ./www:/var/www/html/
+    ports:
+      - 127.0.0.1:1337:80

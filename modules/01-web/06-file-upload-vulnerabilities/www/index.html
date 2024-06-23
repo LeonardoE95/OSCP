@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>File Upload Vulnerabilities</title>
+
+    <style>
+      * {
+      --post-font-family: "PT Serif", "URW Bookman L", "Georgia", serif;
+      --font-size: 16px;
+      --font-family: monospace;
+      --post-font-family: monospace;
+      }
+
+      div#main {
+        margin: auto;
+        width: 65%;
+      }
+
+      div.section {
+	  border-bottom: dashed 1px black;
+	  padding: 15px;
+      }
+
+      div#profile-pic {
+          margin: auto;
+      }
+      
+    </style>
+    
+  </head>
+
+  <body>
+    <div id="main">
+      <h1> File Upload Vulnerabilities! </h1>
+      <hr/>
+
+      <div id="profile-pic">
+	<p> Profile Pic: </p>
+	<img src="./uploads/level1-thumbnail.png" width="300" height="300" alt="missing"/>
+      </div>
+
+      <div class="section">
+	<h3> Level 1 </h3>
+	<p>
+	  This is the description of the first level.
+	</p>
+
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+	  <input type="file" name="filename"/>
+	  <input type="submit" name="submit" value="submit"/>
+	  <input type="hidden" name="level" value="1"/>
+	</form>
+	
+      </div>
+
+      <div class="section">
+	<h3> Level 2 </h3>
+	<p>
+	  This is the description of the second level.
+	</p>
+
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+	  <input type="file" name="filename"/>
+	  <input type="submit" name="submit" value="submit"/>
+	  <input type="hidden" name="level" value="2"/>
+	</form>
+	
+      </div>
+
+      <div class="section">
+	<h3> Level 3 </h3>
+	<p>
+	  This is the description of the third level.
+	</p>
+
+	<form action="upload.php" method="post" enctype="multipart/form-data">
+	  <input type="file" name="filename"/>
+	  <input type="submit" name="submit" value="submit"/>
+	  <input type="hidden" name="level" value="3"/>
+	</form>
+	
+      </div>      
+    </div>
+  </body>
+
+</html>

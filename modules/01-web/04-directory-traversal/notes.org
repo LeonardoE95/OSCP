@@ -1,0 +1,78 @@
+#+TITLE: Web Exploiation
+#+SUBTITLE: 04 - Directory Traversals
+#+AUTHOR: Leonardo Tamiano
+
+* Web Servers
+  Download
+  https://tomcat.apache.org/download-80.cgi
+
+  #+begin_src sh
+wget https://dlcdn.apache.org/tomcat/tomcat-8/v8.5.99/bin/apache-tomcat-8.5.99.tar.gz
+  #+end_src
+
+  Tomcat made up of three main components:
+
+  - ~Catalina~, container of servlet Java. Implements Java Servlets and
+    Javaserver Pages (JSP).
+
+  - ~Coyote~, HTTP connector of Tomcat. It supports the HTTP 1.1
+    protocol. It listens on a TCP port and communicates with the
+    tomcat engine to process the request and send back the response to
+    the client.
+
+  - ~Jasper~, compilation unit for JSP pages. It compiles the pages and
+    sends them to CATALINA.
+  
+  ~Tomcat~ relies with the java environment that you have on the local
+  system. This is done by checking an env variable named
+  ~JAVA_HOME~. Another env variable is ~TOMCAT_HOME~, which defines where
+  you put tomcat in your local file system.
+
+  --------------------
+  
+  Before starting tomcat, we need to make all scripts executable
+
+  #+begin_src sh
+chmod +x ./bin/*.sh
+  #+end_src
+
+  Configure listening port
+
+  ~./conf/server.xml~
+
+  #+begin_src xml
+<!-- A "Connector" represents an endpoint by which requests are received
+     and responses are returned. Documentation at :
+     Java HTTP Connector: /docs/config/http.html
+     Java AJP  Connector: /docs/config/ajp.html
+     APR (HTTP/AJP) Connector: /docs/apr.html
+     Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+-->
+<Connector port="1337" protocol="HTTP/1.1"
+           connectionTimeout="20000"
+           redirectPort="8443"
+           maxParameterCount="1000"
+           />
+  #+end_src
+  
+  Execute tomcat
+
+  #+begin_src sh
+./bin/catalina.sh start
+  #+end_src
+
+  Put your web application within the ~webapps~ folder and enjoy!
+
+* Static Application
+  Showcase simple static application, talk about web server, show requests and responses with burp.
+
+  http://localhost:1337/static-app/
+  
+* Dynamic Application
+  Create a simple dynamic webapp
+
+  wfuzz
+
+  #+begin_example
+wfuzz -w ./wordlist http://localhost:1337/dynamic-app1/?FUZZ=
+  #+end_example

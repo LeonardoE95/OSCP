@@ -1,0 +1,72 @@
+                    ________________________________
+
+                            WEB EXPLOITATION
+                     11 - Enumeration of parameters
+
+                            Leonardo Tamiano
+                    ________________________________
+
+
+Table of Contents
+_________________
+
+1. Commands
+
+
+1 Commands
+==========
+
+  Docker build
+  ,----
+  | docker build -t enum-parameters-lab .
+  | docker compose up
+  `----
+
+  Docker run
+  ,----
+  | docker compose up
+  `----
+
+  Download wordlist
+  ,----
+  | wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/burp-parameter-names.txt
+  `----
+
+  Install wfuzz
+  ,----
+  | sudo pacman -Syy
+  | sudo pacman -S wfuzz
+  `----
+
+  Basic usage of wfuzz
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/burp-parameter-names.txt http://127.0.0.1:1337/orders.php?FUZZ=FUZZ
+  `----
+
+  Discover userId param
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/burp-parameter-names.txt --hh 526 http://127.0.0.1:1337/orders.php?FUZZ=FUZZ
+  `----
+
+  Discover debug param in conjuction with userId param already found
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/burp-parameter-names.txt --hh 561 "http://127.0.0.1:1337/orders.php?userId=test&FUZZ=FUZZ"
+  `----
+
+  Send the requests to burpsuite
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/burp-parameter-names.txt -p 127.0.0.1:8080:HTTP --hh 561 "http://127.0.0.1:1337/orders.php?userId=test&FUZZ=FUZZ"
+  `----
+
+  Search for POST parameter
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/burp-parameter-names.txt -p 127.0.0.1:8080:HTTP -d"test=FUZZ" "http://127.0.0.1:1337/orders.php?userId=test"
+  `----
+
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -w /wordlist/numbers.txt --hl 38 "http://127.0.0.1:1337/orders.php?userId=FUZZ"
+  `----
+
+  ,----
+  | docker run --network="host" -v $(pwd)/wordlist:/wordlist/ -it ghcr.io/xmendez/wfuzz wfuzz -X POST -w /wordlist/burp-parameter-names.txt --hh 561 -p 127.0.0.1:8080:HTTP -d "id=FUZZ&catalogue=1" "http://127.0.0.1:1337/orders.php?userId=test&FUZZ=FUZZ"
+  `----

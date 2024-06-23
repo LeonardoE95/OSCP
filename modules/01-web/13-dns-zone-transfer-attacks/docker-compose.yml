@@ -1,0 +1,12 @@
+services:
+  dns-lab:
+    container_name: dns-lab
+    image: ubuntu/bind9:latest
+    environment:
+      - BIND9_USER=root
+      - TZ=Eurome/Rome
+    ports:
+      - 1337:53/tcp
+      - 1337:53/udp
+    volumes:
+      - ./config:/etc/bind

@@ -1,0 +1,31 @@
+                    ________________________________
+
+                            WEB EXPLOITATION
+                     12 - DNS Zone Transfer attacks
+
+                            Leonardo Tamiano
+                    ________________________________
+
+
+Table of Contents
+_________________
+
+1. Commands
+
+
+1 Commands
+==========
+
+  ,----
+  | docker compose up -d --build
+  `----
+
+  Using `dig'
+  ,----
+  | dig axfr oscp.exam -p1337 @127.0.0.1
+  `----
+
+  stop
+  ,----
+  | docker compose down
+  `----

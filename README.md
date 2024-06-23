@@ -1,32 +1,24 @@
 # OSCP
 
-This repository contains useful information related to the OSCP certification. 
+This repository contains the knowledge you need to obtain the OSCP certification. 
 
-Specifically, I have organized all the knowledge you need to know in
-order to obtain the OSCP certification into nine different
-modules. For each module, you will find a specific folder containing
-information regarding that module. The modules are listed below.
+Specifically, I have organized all the knowledge needed for OSCP into
+the following nine different modules.
 
-**NOTE**: Currently there's not much in these modules, because I just
-started to work on this. In the following months you should see more
-content coming.
-
-- [01 – Web](./modules/01-web)
-- [02 – Linux](./modules/02-linux)
-- [03 – Windows](./modules/02-windows)
-- [04 – Password Attacks](./modules/04-password-attacks)
-- [05 – Using Existing Exploits](./modules/05-using-existing-exploits)
-- [06 – Port Forwarding and Pivoting](./modules/06-port-forwarding-and-pivoting)
-- [07 – Client-side Attacks](./modules/07-client-side-attacks)
-- [08 – Active Directory](./modules/08-active-directory)
-- [09 – Report Writing](./modules/09-report-writing)
+- [X] [01 – Web](./modules/01-web)
+- [ ] [02 – Linux](./modules/02-linux)
+- [ ] [03 – Windows](./modules/02-windows)
+- [ ] [04 – Password Attacks](./modules/04-password-attacks)
+- [ ] [05 – Using Existing Exploits](./modules/05-using-existing-exploits)
+- [ ] [06 – Port Forwarding and Pivoting](./modules/06-port-forwarding-and-pivoting)
+- [ ] [07 – Client-side Attacks](./modules/07-client-side-attacks)
+- [ ] [08 – Active Directory](./modules/08-active-directory)
+- [X] [09 – Report Writing](./modules/09-report-writing)
 
 Other material that I developed regarding OSCP
 
 - [Blog post – OSCP Technical Guide](https://blog.leonardotamiano.xyz/tech/oscp-technical-guide/)
-  
 - [Youtube Playlist – Hexdump](https://www.youtube.com/watch?v=9mrf-WyzkpE&list=PLJnLaWkc9xRgOyupMhNiVFfgvxseWDH5x)
-
 - [Cheatsheet](./cheatsheet.org)
 
 If you want to support my work, feel free to donate:
@@ -50,6 +42,11 @@ For the `web` module the following topics have been covered.
 - [X] [Web Enumeration – HTTP Parameters](https://www.youtube.com/watch?v=OlOs31VzhHo)
 - [X] [Brute Force Attacks](https://youtu.be/tFNRGMF_bdE)
 - [X] [DNS Zone Transfer Attacks](https://youtu.be/IRvHfLhcGVw)
+
+You can find the playlist here below:
+
+- [Web Exploitation Playlist - Hexdump](https://www.youtube.com/watch?v=fe5qBuxumRM&list=PLJnLaWkc9xRitBGPK5CcyoWCcPCeTYoqw)
+- [Web Exploitation Full Course - Hexdump](https://www.youtube.com/watch?v=ik2p4Rz4QzM&t=1891s)
 
 # 02 – Linux
 

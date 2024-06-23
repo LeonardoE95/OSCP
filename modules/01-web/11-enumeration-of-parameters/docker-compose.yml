@@ -1,0 +1,8 @@
+version: '3'
+services:
+
+  enum-parameters-lab:
+    image: enum-parameters-lab
+    container_name: enum-parameters-lab
+    ports:
+      - 127.0.0.1:1337:80

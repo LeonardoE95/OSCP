@@ -1,0 +1,20 @@
+
+download wordlist
+,----
+| wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/directory-list-2.3-medium.txt
+`----
+
+enumerate initial directories
+,----
+| gobuster dir -t20 --wordlist wordlists/directory-list-2.3-medium.txt -u http://localhost:1337
+`----
+
+enumerate php files
+,----
+| gobuster dir -t20 --wordlist wordlists/directory-list-2.3-medium.txt -u http://localhost:1337 -x php
+`----
+
+filter by response length
+,----
+| gobuster dir -t20 --wordlist wordlists/directory-list-2.3-medium.txt -u http://prod.localhost:1337 -x txt --exclude-length 37
+`----

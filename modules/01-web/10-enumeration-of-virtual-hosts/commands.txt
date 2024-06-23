@@ -1,0 +1,61 @@
+                  ___________________________________
+
+                            WEB EXPLOITATION
+                   10 - Enumeration of Virtual Hosts
+
+                            Leonardo Tamiano
+                  ___________________________________
+
+
+Table of Contents
+_________________
+
+1. Commands
+
+
+1 Commands
+==========
+
+  Build dokcer image
+  ,----
+  | docker build -t nginx-lab .
+  `----
+
+  we execute it with
+  ,----
+  | docker compose -f docker-compose.yml up 
+  `----
+
+  download wordlist
+  ,----
+  | wget https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-5000.txt
+  `----
+
+  Using `gobuster'
+
+  ,----
+  | gobuster vhost --append-domain --wordlist wordlist/subdomains-top1million-5000.txt -u http://local:1337 
+  `----
+
+  typical output
+  ,----
+  | ===============================================================
+  | Gobuster v3.6
+  | by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+  | ===============================================================
+  | [+] Url:             http://local:1337
+  | [+] Method:          GET
+  | [+] Threads:         10
+  | [+] Wordlist:        wordlist/subdomains-top1million-5000.txt
+  | [+] User Agent:      gobuster/3.6
+  | [+] Timeout:         10s
+  | [+] Append Domain:   true
+  | ===============================================================
+  | Starting gobuster in VHOST enumeration mode
+  | ===============================================================
+  | Found: test.local:1337 Status: 200 [Size: 52]
+  | Found: dev.local:1337 Status: 200 [Size: 56]
+  | Found: prod.local:1337 Status: 200 [Size: 55]
+  | Progress: 4989 / 4990 (99.98%)
+  | ===============================================================
+  `----
