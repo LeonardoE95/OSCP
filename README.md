@@ -1,19 +1,18 @@
 # OSCP
 
-This repository contains the knowledge you need to obtain the OSCP certification. 
+This repository contains the knowledge required to obtain the OSCP certification.
 
-Specifically, I have organized all the knowledge needed for OSCP into
-the following nine different modules.
+The knowledge has been organized in a structured way into the following nine different modules.
 
-- [X] [01 – Web](./modules/01-web)
-- [ ] [02 – Linux](./modules/02-linux)
-- [ ] [03 – Windows](./modules/02-windows)
-- [ ] [04 – Password Attacks](./modules/04-password-attacks)
-- [ ] [05 – Using Existing Exploits](./modules/05-using-existing-exploits)
-- [ ] [06 – Port Forwarding and Pivoting](./modules/06-port-forwarding-and-pivoting)
-- [ ] [07 – Client-side Attacks](./modules/07-client-side-attacks)
-- [ ] [08 – Active Directory](./modules/08-active-directory)
-- [X] [09 – Report Writing](./modules/09-report-writing)
+- [01 – Web](./modules/01-web)
+- [02 – Linux](./modules/02-linux)
+- [03 – Windows](./modules/02-windows)
+- [04 – Password Attacks](./modules/04-password-attacks)
+- [05 – Using Existing Exploits](./modules/05-using-existing-exploits)
+- [06 – Port Forwarding and Pivoting](./modules/06-port-forwarding-and-pivoting)
+- [07 – Client-side Attacks](./modules/07-client-side-attacks)
+- [08 – Active Directory](./modules/08-active-directory)
+- [09 – Report Writing](./modules/09-report-writing)
 
 Other material that I developed regarding OSCP
 
@@ -21,13 +20,13 @@ Other material that I developed regarding OSCP
 - [Youtube Playlist – Hexdump](https://www.youtube.com/watch?v=9mrf-WyzkpE&list=PLJnLaWkc9xRgOyupMhNiVFfgvxseWDH5x)
 - [Cheatsheet](./cheatsheet.org)
 
-If you want to support my work, feel free to donate:
+Support my work
 
 - ❤️ [Paypal Donation](https://www.paypal.com/donate/?hosted_button_id=T49GUPRXALYTQ)
 
 # 01 – Web
 
-For the `web` module the following topics have been covered.
+For the `web` module the following 13 topics have been covered. 
 
 - [X] [Introduction to Web Exploitation](./modules/01-web/01-introduction-to-web-exploitation)
 - [X] [Getting used to burpsuite](./modules/01-web/02-getting-used-to-burpsuite)
@@ -43,33 +42,53 @@ For the `web` module the following topics have been covered.
 - [X] [Brute Force Attacks](https://youtu.be/tFNRGMF_bdE)
 - [X] [DNS Zone Transfer Attacks](https://youtu.be/IRvHfLhcGVw)
 
-You can find the playlist here below:
+Below you can find the playlist and the full video combining all the episodes.
 
-- [Web Exploitation Playlist - Hexdump](https://www.youtube.com/watch?v=fe5qBuxumRM&list=PLJnLaWkc9xRitBGPK5CcyoWCcPCeTYoqw)
-- [Web Exploitation Full Course - Hexdump](https://www.youtube.com/watch?v=ik2p4Rz4QzM&t=1891s)
+- [Web Exploitation Playlist](https://www.youtube.com/watch?v=fe5qBuxumRM&list=PLJnLaWkc9xRitBGPK5CcyoWCcPCeTYoqw)
+- [Web Exploitation Full Course](https://www.youtube.com/watch?v=ik2p4Rz4QzM&t=1891s)
 
 # 02 – Linux
 
-For the `linux` module the following topics have been covered.
+For the `linux` module the following 14 topics have been covered.
 
-- [ ] System shell
-- [X] [PATH Hijacking](./modules/02-linux/PATH-hijacking)
-- [ ] SUID exploitation
-- [ ] System enumeration
-- [ ] Cronjob enumeration
-- [ ] SUDO exploitation
-- [ ] Wildcard expansion
+- [X] [Introduction to the Linux Shell](https://www.youtube.com/watch?v=YDoKDEfugI4)
+- [X] [File System Permissions](https://www.youtube.com/watch?v=ebFrveeBMN0)
+- [X] [PATH Hijacking](https://www.youtube.com/watch?v=IPs5xz5aEzk)
+- [X] [SUID Exploitation](https://www.youtube.com/watch?v=sQW-Bja7pvE)
+- [X] [SUDO Exploitation](https://www.youtube.com/watch?v=GCaCK_BaGig)
+- [X] [Wildcard Expansion Exploitation](https://www.youtube.com/watch?v=pKefnEhhGV0)
+- [X] [Reverse Shells in Linux](https://www.youtube.com/watch?v=8zt_jIwC7cY)
+- [X] [Unshadow Attack](https://www.youtube.com/watch?v=eVlVQHlJC6U)
+- [X] [System Enumeration](https://www.youtube.com/watch?v=TddEf8qyuKI)
+- [X] [Cronjob Enumeration](https://www.youtube.com/watch?v=BKnGGqy07gc)
+- [X] [Capabilities Enumeration](https://www.youtube.com/watch?v=vbjuVTfVFMA)
+- [X] [Local Service Exploitation](https://www.youtube.com/watch?v=fXEatXoylqg)
+- [X] [Linux Binary Exploitation](https://www.youtube.com/watch?v=C5JUPIvH3t4)
+- [X] [Linux Kernel Exploitation](https://www.youtube.com/watch?v=NZ8KcSv8L9U)
+
+Below you can find the playlist and the full video combining all the episodes.
+
+- [Linux Privilege Escalation Plalyist](https://www.youtube.com/watch?v=YDoKDEfugI4&list=PLJnLaWkc9xRiI6Uxygcxrsqlza3KhRy4v)
+- [Linux Privilege Escalation Full Course](https://www.youtube.com/watch?v=5Un3ffzokJQ)
 
 # 03 – Windows
-
 For the `windows` module the following topics have been covered.
 
-- [ ] System shell
-- [ ] System enumeration
-- [ ] Useful system commands
-- [ ] SeImpersonatePrivilege Exploitation
-- [ ] Service Hijacking Exploitation
-- [ ] Unquoted Service Paths Exploitation
+- [X] [Introduction to the Windows Shells](https://www.youtube.com/watch?v=n382EGuJP8Y)
+- [X] [Windows Permissions](https://www.youtube.com/watch?v=-3UtOvZDWdk)
+- [X] [Windows Reverse Shells](https://www.youtube.com/watch?v=Vwv4IhUH_00)
+- [X] [SeImpersonatePrivilege](https://www.youtube.com/watch?v=01ODXD-oqyc)
+- [X] [Cross Compilation](https://www.youtube.com/watch?v=LESXa6HLOcc)
+- [X] [Windows Services](https://www.youtube.com/watch?v=R9pDCdBWTAk)
+- [X] [Weak Service Permissions](https://www.youtube.com/watch?v=8sLagxX4OVs)
+- [X] [Unquoted Service Path](https://www.youtube.com/watch?v=Hj3Y40z2dSQ)
+- [X] [DLL Hijacking](https://www.youtube.com/watch?v=9BES78zKpok)
+- [X] [UAC Bypass](https://www.youtube.com/watch?v=ZhaZJ4Uipqk)
+- [ ] Always Installed Elevated
+- [ ] Scheduled Tasks
+- [ ] Sensitive Files
+- [ ] Weak Registry Permissions
+- [ ] ...
 
 # 04 – Password Attacks
 
