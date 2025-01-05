@@ -4,15 +4,12 @@ This repository contains the knowledge required to obtain the OSCP certification
 
 The knowledge has been organized in a structured way into the following nine different modules.
 
-- [01 – Web](./modules/01-web)
-- [02 – Linux](./modules/02-linux)
-- [03 – Windows](./modules/02-windows)
-- [04 – Password Attacks](./modules/04-password-attacks)
-- [05 – Using Existing Exploits](./modules/05-using-existing-exploits)
-- [06 – Port Forwarding and Pivoting](./modules/06-port-forwarding-and-pivoting)
-- [07 – Client-side Attacks](./modules/07-client-side-attacks)
-- [08 – Active Directory](./modules/08-active-directory)
-- [09 – Report Writing](./modules/09-report-writing)
+- [Web](./modules/web)
+- [Linux](./modules/linux)
+- [Windows](./modules/windows)
+- [Active Directory](./modules/active-directory)
+- [Report Writing](#Report Writing)
+- [Others]((./modules/others))
 
 Other material that I developed regarding OSCP
 
@@ -24,7 +21,7 @@ Support my work
 
 - ❤️ [Paypal Donation](https://www.paypal.com/donate/?hosted_button_id=T49GUPRXALYTQ)
 
-# 01 – Web
+# Web
 
 For the `web` module the following 13 topics have been covered. 
 
@@ -47,7 +44,7 @@ Below you can find the playlist and the full video combining all the episodes.
 - [Web Exploitation Playlist](https://www.youtube.com/watch?v=fe5qBuxumRM&list=PLJnLaWkc9xRitBGPK5CcyoWCcPCeTYoqw)
 - [Web Exploitation Full Course](https://www.youtube.com/watch?v=ik2p4Rz4QzM&t=1891s)
 
-# 02 – Linux
+# Linux
 
 For the `linux` module the following 14 topics have been covered.
 
@@ -71,8 +68,8 @@ Below you can find the playlist and the full video combining all the episodes.
 - [Linux Privilege Escalation Plalyist](https://www.youtube.com/watch?v=YDoKDEfugI4&list=PLJnLaWkc9xRiI6Uxygcxrsqlza3KhRy4v)
 - [Linux Privilege Escalation Full Course](https://www.youtube.com/watch?v=5Un3ffzokJQ)
 
-# 03 – Windows
-For the `windows` module the following topics have been covered.
+# Windows
+For the `windows` module the following 19 topics have been covered.
 
 - [X] [Introduction to the Windows Shells](https://www.youtube.com/watch?v=n382EGuJP8Y)
 - [X] [Windows Permissions](https://www.youtube.com/watch?v=-3UtOvZDWdk)
@@ -84,52 +81,22 @@ For the `windows` module the following topics have been covered.
 - [X] [Unquoted Service Path](https://www.youtube.com/watch?v=Hj3Y40z2dSQ)
 - [X] [DLL Hijacking](https://www.youtube.com/watch?v=9BES78zKpok)
 - [X] [UAC Bypass](https://www.youtube.com/watch?v=ZhaZJ4Uipqk)
-- [ ] Always Installed Elevated
-- [ ] Scheduled Tasks
-- [ ] Sensitive Files
-- [ ] Weak Registry Permissions
-- [ ] ...
+- [X] [Always Installed Elevated](https://www.youtube.com/watch?v=tnGD83COUIQ)
+- [X] [Files with Sensitive Data](https://www.youtube.com/watch?v=5zjVDtwyreY)
+- [X] [Windows Hashes](https://www.youtube.com/watch?v=UrcMs4FMcpA)
+- [X] [Stored Credentials](https://www.youtube.com/watch?v=uzLGG8EsUAU)
+- [X] [Scheduled Tasks](https://www.youtube.com/watch?v=NbsJ3mHhoVw)
+- [X] [Critical Registry Paths](https://www.youtube.com/watch?v=HCOxY6U6vLQ)
+- [X] [Useful Tools](https://www.youtube.com/watch?v=n4YvdB58djg)
+- [X] [AMSI Bypass](https://www.youtube.com/watch?v=7IF-cY3vg1c)
+- [X] [Cheatsheet and Methodology](https://www.youtube.com/watch?v=XE_V7gQ2YXg)
 
-# 04 – Password Attacks
+Below you can find the playlist and the full video combining all the episodes.
 
-For the `password attacks` module the following topics have been covered.
+- [Windows Privilege Escalation Plalyist](https://www.youtube.com/watch?v=n382EGuJP8Y&list=PLJnLaWkc9xRh8hmNFWyzWMFgAHo8Lgr93)
+- [Windows Privilege Escalation Full Course](https://www.youtube.com/watch?v=OmW7351U8cI)
 
-- [ ] Hash cracking theory
-- [ ] Hash cracking tools
-- [ ] KeePass databases
-- [ ] Ssh keys
-- [ ] NTLM hash
-- [ ] Net-NTLMv2 hash
-- [ ] AS-REP hash
-- [ ] Kerberoasting hash
-
-# 05 – Using Existing Exploits
-
-For the `using existing exploits` module the following topics have been covered.
-
-- [ ] Metasploit
-- [ ] exploit-db
-- [ ] CVE-2021-41773
-
-# 06 – Port Forwarding and Pivoting
-
-For the `port forwarding and pivoting` module the following topics have been covered.
-
-- [ ] Local Port Forwarding
-- [ ] Dynamic Port Forwarding
-- [ ] Remote Port Forwarding
-- [ ] Remote Dynamic Port Forwarding
-
-# 07 – Client-side Attacks
-
-For the `client-side attacks` module the following topics have been covered.
-
-- [ ] Cross-Site Scripting
-- [ ] Microsoft Word Macros
-- [ ] Windows Library Files
-
-# 08 – Active Directory
-
+#  Active Directory
 For the `active directory` module the following topics have been covered.
 
 - [ ] Enumeration
@@ -141,7 +108,7 @@ For the `active directory` module the following topics have been covered.
 - [ ] NTLM authentication
 - [ ] Kerberos authentication
 
-# 09 – Report Writing
+# Report Writing
 
 In the `./report` you will find a folder ready to be used for the
 final exam. The idea is simple: you write your exam findings in a
@@ -193,3 +160,23 @@ follows. Just remember that the scripts only supports `markdown` and
 ./generate.sh report.md
 ./generate.sh report.org
 ```
+
+# Others
+
+For the `others` module the following topics have been covered.
+
+- [ ] Port Forwarding and Pivoting
+  - [ ] Local Port Forwarding
+  - [ ] Dynamic Port Forwarding
+  - [ ] Remote Port Forwarding
+  - [ ] Remote Dynamic Port Forwarding
+  
+- [ ] Using Existing Exploits
+  - [ ] Metasploit
+  - [ ] exploit-db
+  - [ ] CVE-2021-41773
+
+- [ ] Client-side Attacks
+  - [ ] Cross-Site Scripting
+  - [ ] Microsoft Word Macros
+  - [ ] Windows Library Files

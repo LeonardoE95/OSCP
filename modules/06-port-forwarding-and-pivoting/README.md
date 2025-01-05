@@ -1,3 +1,0 @@
-# OSCP – 06 Port Forwarding and Pivoting
-
-TODO...

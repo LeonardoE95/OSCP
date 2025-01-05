@@ -1,3 +1,0 @@
-# OSCP – 07 Client-Side Attacks
-
-TODO...

@@ -1,6 +1,6 @@
 #+TITLE: OSCP Cheatsheet
 #+AUTHOR: Leonardo Tamiano
-  
+
 * Reverse Shells
   shell upgrade
   #+begin_example

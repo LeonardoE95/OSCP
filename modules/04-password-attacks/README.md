@@ -1,3 +1,0 @@
-# OSCP – 04 Password Attacks
-
-TODO...
