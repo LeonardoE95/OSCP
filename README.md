@@ -2,7 +2,7 @@
 
 This repository contains the knowledge required to obtain the OSCP certification.
 
-The knowledge has been organized in a structured way into the following nine different modules.
+The knowledge has been organized in a structured way into the following modules.
 
 - [Web](./modules/web)
 - [Linux](./modules/linux)
