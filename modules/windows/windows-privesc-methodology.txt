@@ -1,0 +1,82 @@
+                     _____________________________
+
+                      WINDOWS PRIVESC METHODOLOGY
+
+                                Hexdump
+                     _____________________________
+
+
+Table of Contents
+_________________
+
+1. Scan for services
+2. Exploit Services for Foothold
+3. Privilege Escalation
+
+
+1 Scan for services
+===================
+
+  - nmap to scans for services
+
+
+2 Exploit Services for Foothold
+===============================
+
+  - exploit services for foothold
+    - for web services
+      - enumeration of files and directories
+      - enumeration of virtual hosts
+      - check for known CVEs
+      - check for custom web vulnerabilities (Web Exploitation Series)
+
+    - for non-web services (Active Directory Series)
+      - enumerate entry points
+      - check for common miss-configurations
+      - check for known CVEs
+      - check for custom vulns
+
+
+3 Privilege Escalation
+======================
+
+  - with an interactive shell on the system
+    - enumerate users, groups and privileges
+      - check for dangerous privileges (SeImpersonatePrivilege,
+        SeBackupPrivilege)
+
+    - enumerate installed applications
+      - check for known CVEs
+
+    - enumerate services
+      - check for known CVEs
+      - check for weak service permissions
+      - check for unquoted service paths
+      - check for DLL Hijacking
+
+    - enumerate files in accessible directories
+      - SAM + SYSTEM to dump NTLM hashes
+      - Powershell History files
+      - Environment and configuration files
+      - Backups
+      - Password manager databases
+
+    - enumerate stored credentials
+
+    - check for Always Installed Elevated configuration
+
+    - if user belongs to privileged group with low integrity level
+      - check for UAC bypass to increase integrity level
+
+    - if running as administrator
+      - run mimikatz to dump NTLM hashes
+
+    - if need to obtain NTLM hash of current user
+      - run responder to leak Net-NTLM hash
+
+    - enumerate scheduled tasks
+
+    - enumerate critical registry paths
+
+    - if antivirus is active
+      - AMSI bypass
